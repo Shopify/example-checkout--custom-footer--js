@@ -16,7 +16,11 @@ handle = "custom-footer"
 
 [[extensions.targeting]]
 module = "./src/Checkout.js"
-target = "purchase.checkout.block.render"
+target = "purchase.checkout.footer.render-after"
+
+[[extensions.targeting]]
+module = "./src/ThankYou.js"
+target = "purchase.thank-you.footer.render-after"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
