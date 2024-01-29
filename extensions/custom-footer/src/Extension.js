@@ -10,11 +10,6 @@ import {
 export default function renderExtension({root, shop}) {
   const {storefrontUrl} = shop;
 
-  // In case this is a re-render, then remove all previous children
-  for (const child of root.children) {
-    root.removeChild(child);
-  }
-
   // Create the left footer column with links to storefront
   const leftColumn = root.createComponent(
     InlineStack,
