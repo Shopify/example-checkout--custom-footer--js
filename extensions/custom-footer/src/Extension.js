@@ -6,6 +6,7 @@ import {
   Text,
 } from '@shopify/ui-extensions/checkout';
 
+// [START custom-footer.render]
 export default function renderExtension({root, shop}) {
   const {storefrontUrl} = shop;
 
@@ -70,6 +71,7 @@ export default function renderExtension({root, shop}) {
     ],
   );
 
+  // Add the columns to InlineLayout to create the left and right separation
   const footer = root.createComponent(
     InlineLayout,
     {columns: ['auto', 'fill']},
@@ -78,3 +80,4 @@ export default function renderExtension({root, shop}) {
 
   root.appendChild(footer);
 }
+// [END custom-footer.render]
