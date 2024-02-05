@@ -3,6 +3,7 @@ import {
   InlineLayout,
   InlineStack,
   Link,
+  ListItem,
   Text,
 } from '@shopify/ui-extensions/checkout';
 
@@ -14,19 +15,54 @@ export default function renderExtension({root, shop}) {
   const leftColumn = root.createComponent(
     InlineStack,
     {
-      spacing: 'extraTight',
-      blockAlignment: 'center',
+      spacing: "extraTight",
+      blockAlignment: "center",
+      accessibilityRole: "orderedList",
     },
     [
-      root.createComponent(Link, {to: storefrontUrl}, 'Home'),
-      root.createComponent(Icon, {source: 'chevronRight', size: 'extraSmall'}),
       root.createComponent(
-        Link,
-        {to: new URL('/collections', storefrontUrl).href},
-        'Shop',
+        InlineStack,
+        {
+          spacing: "extraTight",
+          blockAlignment: "center",
+          accessibilityRole: "listItem",
+        },
+        [
+          root.createComponent(Link, {to: storefrontUrl}, "Home"),
+          root.createComponent(Icon, {
+            source: "chevronRight",
+            size: "extraSmall",
+          }),
+        ],
       ),
-      root.createComponent(Icon, {source: 'chevronRight', size: 'extraSmall'}),
-      root.createComponent(Text, {appearance: 'subdued'}, 'Checkout'),
+      root.createComponent(
+        InlineStack,
+        {
+          spacing: "extraTight",
+          blockAlignment: "center",
+          accessibilityRole: "listItem",
+        },
+        [
+          root.createComponent(
+            Link,
+            {to: new URL("/collections", storefrontUrl).href},
+            "Shop",
+          ),
+          root.createComponent(Icon, {
+            source: "chevronRight",
+            size: "extraSmall",
+          }),
+        ],
+      ),
+      root.createComponent(
+        InlineStack,
+        {
+          spacing: "extraTight",
+          blockAlignment: "center",
+          accessibilityRole: "listItem",
+        },
+        root.createComponent(Text, { appearance: "subdued" }, "Checkout"),
+      ),
     ],
   );
 
@@ -34,34 +70,56 @@ export default function renderExtension({root, shop}) {
   const rightColumn = root.createComponent(
     InlineStack,
     {
-      spacing: 'tight',
-      inlineAlignment: 'end',
+      blockAlignment: "center",
+      spacing: "tight",
+      inlineAlignment: "end",
+      accessibilityRole: "orderedList",
     },
     [
       root.createComponent(
-        Link,
-        {to: new URL('/sizing', storefrontUrl).href},
-        'Sizing',
+        ListItem,
+        undefined,
+        root.createComponent(
+          Link,
+          {to: new URL("/sizing", storefrontUrl).href},
+          "Sizing",
+        ),
       ),
       root.createComponent(
-        Link,
-        {to: new URL('/terms', storefrontUrl).href},
-        'Terms',
+        ListItem,
+        undefined,
+        root.createComponent(
+          Link,
+          {to: new URL("/terms", storefrontUrl).href},
+          "Terms",
+        ),
       ),
       root.createComponent(
-        Link,
-        {to: new URL('/privacy', storefrontUrl).href},
-        'Privacy',
+        ListItem,
+        undefined,
+        root.createComponent(
+          Link,
+          {to: new URL("/privacy", storefrontUrl).href},
+          "Privacy",
+        ),
       ),
       root.createComponent(
-        Link,
-        {to: new URL('/faq', storefrontUrl).href},
-        'FAQ',
+        ListItem,
+        undefined,
+        root.createComponent(
+          Link,
+          {to: new URL("/faq", storefrontUrl).href},
+          "FAQ",
+        ),
       ),
       root.createComponent(
-        Link,
-        {to: new URL('/accessibility', storefrontUrl).href},
-        'Accessibility',
+        ListItem,
+        undefined,
+        root.createComponent(
+          Link,
+          {to: new URL("/accessibility", storefrontUrl).href},
+          "Accessibility",
+        ),
       ),
     ],
   );
