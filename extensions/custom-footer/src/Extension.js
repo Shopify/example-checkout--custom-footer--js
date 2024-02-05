@@ -3,8 +3,8 @@ import {
   InlineLayout,
   InlineStack,
   Link,
-  ListItem,
   Text,
+  View,
 } from '@shopify/ui-extensions/checkout';
 
 // [START custom-footer.render]
@@ -77,8 +77,8 @@ export default function renderExtension({root, shop}) {
     },
     [
       root.createComponent(
-        ListItem,
-        undefined,
+        View,
+        {accessibilityRole: 'listItem'},
         root.createComponent(
           Link,
           {to: new URL("/sizing", storefrontUrl).href},
@@ -86,8 +86,8 @@ export default function renderExtension({root, shop}) {
         ),
       ),
       root.createComponent(
-        ListItem,
-        undefined,
+        View,
+        {accessibilityRole: 'listItem'},
         root.createComponent(
           Link,
           {to: new URL("/terms", storefrontUrl).href},
@@ -95,8 +95,8 @@ export default function renderExtension({root, shop}) {
         ),
       ),
       root.createComponent(
-        ListItem,
-        undefined,
+        View,
+        {accessibilityRole: 'listItem'},
         root.createComponent(
           Link,
           {to: new URL("/privacy", storefrontUrl).href},
@@ -104,8 +104,8 @@ export default function renderExtension({root, shop}) {
         ),
       ),
       root.createComponent(
-        ListItem,
-        undefined,
+        View,
+        {accessibilityRole: 'listItem'},
         root.createComponent(
           Link,
           {to: new URL("/faq", storefrontUrl).href},
@@ -113,8 +113,8 @@ export default function renderExtension({root, shop}) {
         ),
       ),
       root.createComponent(
-        ListItem,
-        undefined,
+        View,
+        {accessibilityRole: 'listItem'},
         root.createComponent(
           Link,
           {to: new URL("/accessibility", storefrontUrl).href},
