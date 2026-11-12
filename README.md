@@ -1,3 +1,5 @@
+> **This repository is no longer maintained.** It has been archived and receives no updates or security fixes. Use [example-checkout--custom-footer--preact](https://github.com/Shopify/example-checkout--custom-footer--preact) instead.
+
 # Shopify app example: custom footer checkout extension
 
 This repo contains an example app that uses [checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions) to build a custom footer using JavaScript.
